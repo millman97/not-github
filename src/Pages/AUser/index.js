@@ -7,7 +7,6 @@ const AUser = () => {
     const [userData, setUserData] = useState({});
     const [repoData, setRepoData] = useState([]);
 
-
     let windowUrl = window.location.href.toString();
     const username = windowUrl.substring(windowUrl.indexOf("/localhost:3000/") + 16, windowUrl.length);
 
@@ -26,14 +25,6 @@ const AUser = () => {
             })
     }, [])
 
-    useEffect(() => {
-        console.log(userData);
-    }, [userData]);
-
-    useEffect(() => {
-        console.log(repoData);
-    }, [repoData]);
-
     let imgAlt = `${username}'s Profile Picture`
 
     while (repoData == [] || userData == {}) {
@@ -51,10 +42,10 @@ const AUser = () => {
                 <h1 className="username">{username}</h1>
                 <p>View the full profile on <a href={userData.html_url}>GitHub</a>.</p>
             </div>
-            <h2>Repositories</h2>
             <div className="repos">
+                <h2>Public Repositories</h2>
                 {repoData.map(repo => (
-                    <Repo title={repo.name} key={repo.id} />
+                    <Repo title={repo.name} desc={repo.description} forks={repo.forks} stars={repo.stargazers_count} issues={repo.open_issues} link={repo.html_url} key={repo.id} />
                 ))}
             </div>
         </div>
