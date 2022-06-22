@@ -1,0 +1,7 @@
+nav {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
