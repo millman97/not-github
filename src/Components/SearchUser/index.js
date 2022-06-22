@@ -27,7 +27,7 @@ const SearchUser = () => {
                     id='search'
                     placeholder="Enter your GitHub username..."
                     value={queryInput}
-                    style={{ display: 'inline-block', width: '60vw', padding: '25px 20px 25px 20px', fontSize: '30px', borderRadius: '50px', marginTop: '25vh' }}
+                    style={{ display: 'inline-block', width: '60vw', height:'10vh', padding: '25px 20px 25px 20px', fontSize: '30px', borderRadius: '50px' }}
                     onChange={handleInput}
                 />
                 <input type='submit' value='Submit' style={{ display: 'none' }} />

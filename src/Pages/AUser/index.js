@@ -25,14 +25,6 @@ const AUser = () => {
             })
     }, [])
 
-    useEffect(() => {
-        console.log(userData);
-    }, [userData]);
-
-    useEffect(() => {
-        console.log(repoData);
-    }, [repoData]);
-
     let imgAlt = `${username}'s Profile Picture`
 
     while (repoData == [] || userData == {}) {
@@ -50,8 +42,8 @@ const AUser = () => {
                 <h1 className="username">{username}</h1>
                 <p>View the full profile on <a href={userData.html_url}>GitHub</a>.</p>
             </div>
-            <h2>Public Repositories</h2>
             <div className="repos">
+                <h2>Public Repositories</h2>
                 {repoData.map(repo => (
                     <Repo title={repo.name} desc={repo.description} forks={repo.forks} stars={repo.stargazers_count} issues={repo.open_issues} link={repo.html_url} key={repo.id} />
                 ))}

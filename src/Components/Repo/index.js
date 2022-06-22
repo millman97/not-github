@@ -36,12 +36,14 @@ const Repo = (props) => {
                 contentLabel="Example Modal"
             >
                 <h2>{props.title}</h2>
-                <p>{props.desc}</p>
+                <p className="modalDesc">{props.desc}</p>
                 <p>Forks: {props.forks}</p>
                 <p>Stargazers: {props.stars}</p>
                 <p>Open Issues: {props.issues}</p>
                 <p>View the full repo on <a href={props.link}>GitHub</a>.</p>
-                <button onClick={closeModal}>close</button>
+                <div className="spanDiv">
+                <span onClick={closeModal} className="material-symbols-outlined">cancel</span>
+                </div>
             </Modal>
             <p className="repoDesc">{props.desc}</p>
         </div>
