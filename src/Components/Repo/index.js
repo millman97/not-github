@@ -1,9 +1,9 @@
 import React from "react";
 
-const Repo = () => {
+const Repo = (props) => {
     return (
         <div className="repo">
-
+            <h3>{props.title}</h3>
         </div>
     );
 }
