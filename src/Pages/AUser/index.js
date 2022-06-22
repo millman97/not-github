@@ -8,7 +8,7 @@ const AUser = () => {
     const [repoData, setRepoData] = useState([]);
 
     let windowUrl = window.location.href.toString();
-    const username = windowUrl.substring(windowUrl.indexOf("/localhost:3000/") + 16, windowUrl.length);
+    const username = windowUrl.substring(windowUrl.indexOf("hub.netlify.app/") + 16, windowUrl.length);
 
     useEffect(() => {
         axios.get(`https://api.github.com/users/${username}`)
